@@ -12,11 +12,11 @@ Install&amp;Update [World of Warcraft's](http://us.battle.net/wow/en/) AddOns fr
   $ cd manage-wow-addons
   ```
 
-1. Create or Edit data.txt
+1. Create or Edit `conf`
 
   ```
   ...
-  $ cat data.txt
+  $ cat conf
   bagnon
   master-plan
   npcscan
@@ -73,7 +73,7 @@ Install&amp;Update [World of Warcraft's](http://us.battle.net/wow/en/) AddOns fr
     -> SKIP
     
   # Why?
-  $ cat data.txt
+  $ cat conf
   bagnon 7.0.3
   master-plan 0.97
   npcscan 7.0.3.4
