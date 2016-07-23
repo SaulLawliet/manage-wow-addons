@@ -1,7 +1,7 @@
 # Manage Wow AddOns
 Install&amp;Update [World of Warcraft's](http://us.battle.net/wow/en/) AddOns from [Curse](http://mods.curse.com/addons/wow).
 
-[NOTICE]: Only `bash` version. So maybe cannot run in Windows.
+[NOTICE]: Only `bash` version. So maybe you cannot run in Windows.
 
 # Usage
 1. Download or Clone, then enter
