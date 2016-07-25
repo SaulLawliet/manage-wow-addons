@@ -1,6 +1,9 @@
 #!/bin/bash
 
-WOW_DIR="/data/World of Warcraft/"
+cd $(dirname $(readlink -f $0))
+
+
+WOW_DIR="/data/World of Warcraft"
 CONF_FILE="conf"
 CONF_FILE_TMP="${CONF_FILE}_tmp"
 CONF_FILE_OLD="${CONF_FILE}_old"
@@ -42,7 +45,7 @@ if [[ ! -d "$WOW_DIR" ]]; then
 fi
 
 # check addons's dir
-dir=$WOW_DIR"Interface/AddOns"
+dir=$WOW_DIR"/Interface/AddOns"
 if [[ ! -d "$dir" ]]; then
     err "WOW AddOns directory error, plz check! -> [$dir]"
     exit 1
@@ -51,6 +54,10 @@ fi
 # check file
 if [[ ! -f "$CONF_FILE" ]]; then
     err "local config file error, plz check! -> [$CONF_FILE]."
+    exit 1
+fi
+if [[ ! -s "$CONF_FILE" ]]; then
+    err "local config file no data, plz check! -> [$CONF_FILE]."
     exit 1
 fi
 
@@ -86,18 +93,18 @@ while read line; do
     grep=$GREP_DOWN
 
     file_url=`curl -s $url |grep "$grep" |awk -F'"' '{print $(NF-5)}'`
-    $(wget -q $file_url)
+    wget -q $file_url
 
 
     # 3.
     info_v2 "extract..."
 
     file_name=`echo $file_url |awk -F'/' '{print $NF}'`
-    $(unzip -oqd $dir $file_name && rm $file_name)
+    unzip -oqd "$dir" $file_name && rm $file_name
 
 
     info_v2 "DONE"
     echo "$name $new_version" >> $CONF_FILE_TMP
 done < $CONF_FILE
 
-$(mv $CONF_FILE $CONF_FILE_OLD && mv $CONF_FILE_TMP $CONF_FILE)
+mv $CONF_FILE $CONF_FILE_OLD && mv $CONF_FILE_TMP $CONF_FILE
