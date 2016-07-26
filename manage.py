@@ -44,7 +44,6 @@ def handle():
         url = bs.find('div', "countdown").find('a')['data-href']
         file_name = wget.download(url, bar="")
 
-
         # 3.
         print_lv2("extract...")
         zf = zipfile.ZipFile(file_name)
