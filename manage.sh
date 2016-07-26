@@ -40,14 +40,14 @@ fi
 
 # check wow's dir
 if [[ ! -d "$WOW_DIR" ]]; then
-    err "WOW directory error, plz check! -> [$WOW_DIR]"
+    err "WOW directory error, plz check! -> [$WOW_DIR]."
     exit 1
 fi
 
 # check addons's dir
 dir=$WOW_DIR"/Interface/AddOns"
 if [[ ! -d "$dir" ]]; then
-    err "WOW AddOns directory error, plz check! -> [$dir]"
+    err "WOW AddOns directory error, plz check! -> [$dir]."
     exit 1
 fi
 
