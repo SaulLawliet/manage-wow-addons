@@ -17,12 +17,12 @@ URL_HOME = URL_ROOT + "/addons/wow/{}"
 
 
 def print_lv2(param):
-    print "  ->", param
+    print ("  ->", param)
 
 def handle():
     map = read_file()
     for name, old_version in map.items():
-        print "{}({})".format(name, old_version)
+        print ("{}({})".format(name, old_version))
 
         # 1.
         print_lv2("check version...")
@@ -47,7 +47,6 @@ def handle():
         # 3.
         print_lv2("extract...")
         zf = zipfile.ZipFile(file_name)
-        print ADDONS_DIR
         zf.extractall(ADDONS_DIR)
         zf.close()
         os.remove(file_name)
@@ -75,16 +74,16 @@ def check():
     global ADDONS_DIR
 
     if not os.path.exists(WOW_DIR):
-        print "WOW directory error, plz check! -> [{}].".format(WOW_DIR)
+        print ("WOW directory error, plz check! -> [{}].".format(WOW_DIR))
         sys.exit(1)
 
     ADDONS_DIR = WOW_DIR + "/Interface/AddOns"
     if not os.path.exists(ADDONS_DIR):
-        print "WOW AddOns directory error, plz check! -> [{}].".format(ADDONS_DIR)
+        print ("WOW AddOns directory error, plz check! -> [{}].".format(ADDONS_DIR))
         sys.exit(1)
 
     if not os.path.isfile(CONF_FILE):
-        print "local config file error, plz check! -> [].".format(CONF_FILE)
+        print ("local config file error, plz check! -> [].".format(CONF_FILE))
         sys.exit(1)
 
 if __name__ == '__main__':
