@@ -29,7 +29,7 @@ def handle():
         r = requests.get(URL_HOME.format(name))
         bs = BeautifulSoup(r.content, 'html.parser')
         data = bs.find('tr', 'even').find('a', href=True)
-        url_down =  data['href']
+        url_down = data['href']
         new_version = data.getText()
 
         print_lv2("new: {}".format(new_version))
