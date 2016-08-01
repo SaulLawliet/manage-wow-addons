@@ -12,7 +12,7 @@ ADDONS_DIR = ""
 CONF_FILE = "conf"
 CONF_FILE_OLD = CONF_FILE + "_old"
 
-URL_ROOT = "http://mods.curse.com"
+URL_ROOT = "https://mods.curse.com"
 URL_HOME = URL_ROOT + "/addons/wow/{}"
 
 

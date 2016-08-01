@@ -11,8 +11,8 @@ CONF_FILE_OLD="${CONF_FILE}_old"
 REPLACE_NAME="_NAME_"
 REPLACE_ID="_ID_"
 
-URL_HOME="http://mods.curse.com/addons/wow/${REPLACE_NAME}"
-URL_DOWN="http://mods.curse.com/addons/wow/${REPLACE_NAME}/${REPLACE_ID}"
+URL_HOME="https://mods.curse.com/addons/wow/${REPLACE_NAME}"
+URL_DOWN="https://mods.curse.com/addons/wow/${REPLACE_NAME}/${REPLACE_ID}"
 
 GREP_HOME="<tr class=\"even\"><td><a href=\"/addons/wow/${REPLACE_NAME}/"
 GREP_DOWN="click here"
