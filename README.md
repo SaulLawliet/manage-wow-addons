@@ -1,7 +1,9 @@
 # Manage WoW AddOns
 Install&amp;Update [World of Warcraft's](http://us.battle.net/wow/en/) AddOns from [Curse](http://mods.curse.com/addons/wow).
 
-[NOTICE]: Only `bash` version. So maybe you cannot run in Windows.
+# Versions
+- [Bash](manage.sh)
+- [Python](manage.py)
 
 # Usage
 1. Download or Clone, then enter
@@ -25,7 +27,7 @@ Install&amp;Update [World of Warcraft's](http://us.battle.net/wow/en/) AddOns fr
 1. Run
 
   ```
-  $ ./manage.sh [WoW dir]
+  $ ./manage.sh [WoW dir]  # or python manage.py [WoW dir]
   bagnon()
     -> check version...
     -> new: 7.0.3
