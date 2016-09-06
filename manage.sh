@@ -6,7 +6,6 @@ cd $(dirname $(readlink -f $0))
 WOW_DIR="/data/World of Warcraft"
 CONF_FILE="conf"
 CONF_FILE_TMP="${CONF_FILE}_tmp"
-CONF_FILE_OLD="${CONF_FILE}_old"
 
 REPLACE_NAME="_NAME_"
 REPLACE_ID="_ID_"
@@ -107,4 +106,4 @@ while read line; do
     echo "$name $new_version" >> $CONF_FILE_TMP
 done < $CONF_FILE
 
-mv $CONF_FILE $CONF_FILE_OLD && mv $CONF_FILE_TMP $CONF_FILE
+mv $CONF_FILE_TMP $CONF_FILE
