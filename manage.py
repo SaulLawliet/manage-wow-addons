@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 import os
 import sys
@@ -41,11 +41,12 @@ def handle():
         print_lv2("check version...")
         r = requests.get(URL_HOME % name)
         bs = BeautifulSoup(r.content, 'html.parser')
-        data = bs.find('tr', 'even').find('a', href=True)
-        url_down = data['href']
-        new_version = data.getText()
-        if new_version.endswith('-nolib'):  # remove '-nolib'
-            new_version = new_version[:-6]
+        for tr in bs.find('tbody').find_all('tr'):
+            data = tr.find('a', href=True)
+            if not data.getText().endswith("-nolib"):
+                url_down = data['href']
+                new_version = data.getText()
+                break
 
         print_lv2("new: %s" % new_version)
         if new_version == old_version:
