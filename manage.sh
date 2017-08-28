@@ -74,7 +74,7 @@ while read line; do
     grep=${GREP_HOME//$REPLACE_NAME/$name}
     arr=($(curl -s $url |grep "$grep" |head -n1 |awk -F'<|>|"|/' '{print $(NF-5), $(NF-3)}'))
     id=${arr[0]}
-    new_version=${arr[1]}
+    new_version=${arr[1]%-nolib}  # remove '-nolib'
 
     info_v2 "new $new_version"
     if [[ $version = $new_version ]]; then
