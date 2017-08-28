@@ -2,7 +2,7 @@
 Install&amp;Update [World of Warcraft's](http://us.battle.net/wow/en/) AddOns from [Curse](http://mods.curse.com/addons/wow).
 
 # Versions
-- [Bash](manage.sh)
+- ~~[Bash](manage.sh)~~ (Deprecated)
 - [Python](manage.py)
 
 # Usage
